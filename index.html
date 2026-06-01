@@ -1,423 +1,626 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muhammad Saad | Data Analyst Portfolio</title>
-  <meta name="description" content="Muhammad Saad - Data Analyst portfolio with projects in Excel, SQL, Python, Power BI, and Android development experience." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #070b12;
-      --card: #101826;
-      --card-2: #0c1320;
-      --text: #eef4ff;
-      --muted: #a9b8ce;
-      --accent: #ffbd39;
-      --accent-2: #38bdf8;
-      --green: #22c55e;
-      --border: rgba(255, 255, 255, 0.10);
-      --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
-    }
+  <head>
+    <title>Muhammad Saad Protfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: "Poppins", Arial, sans-serif;
-      background: radial-gradient(circle at top left, rgba(56,189,248,.16), transparent 35%), var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    .container { width: min(1120px, 92%); margin: auto; }
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
 
-    .nav {
-      position: sticky; top: 0; z-index: 1000;
-      backdrop-filter: blur(16px);
-      background: rgba(7, 11, 18, 0.78);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-inner {
-      min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 18px;
-    }
-    .brand { font-size: 1.2rem; font-weight: 800; letter-spacing: .4px; }
-    .brand span { color: var(--accent); }
-    .nav-links { display: flex; gap: 22px; list-style: none; font-size: .92rem; color: var(--muted); flex-wrap: wrap; justify-content: flex-end; }
-    .nav-links a:hover { color: var(--accent); }
+    <link rel="stylesheet" href="css/aos.css">
 
-    .hero { min-height: calc(100vh - 74px); display: grid; place-items: center; padding: 80px 0; }
-    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 44px; align-items: center; }
-    .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: .18em; text-transform: uppercase; font-size: .82rem; }
-    h1 { font-size: clamp(2.6rem, 6vw, 5.3rem); line-height: 1.04; margin: 16px 0; }
-    h1 span { color: var(--accent); }
-    .typing { font-size: clamp(1.2rem, 2.2vw, 1.9rem); font-weight: 700; color: var(--accent-2); min-height: 45px; }
-    .hero p { color: var(--muted); max-width: 710px; font-size: 1.05rem; margin-top: 18px; }
-    .btn-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      padding: 13px 22px; border-radius: 999px; font-weight: 700; border: 1px solid var(--border);
-      transition: .2s ease;
-    }
-    .btn-primary { background: var(--accent); color: #111827; border-color: var(--accent); }
-    .btn-outline { color: var(--text); }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(255,189,57,.16); }
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
 
-    .hero-card {
-      background: linear-gradient(145deg, rgba(255,255,255,.09), rgba(255,255,255,.03));
-      border: 1px solid var(--border); border-radius: 30px; padding: 30px; box-shadow: var(--shadow);
-    }
-    .profile-box {
-      min-height: 360px; border-radius: 24px;
-      background: linear-gradient(135deg, rgba(255,189,57,.22), rgba(56,189,248,.16)), var(--card);
-      display: grid; place-items: center; text-align: center; padding: 30px;
-    }
-    .profile-avatar {
-      width: 132px; height: 132px; border-radius: 50%;
-      background: #0b1220; border: 3px solid var(--accent); display: grid; place-items: center;
-      font-size: 3rem; font-weight: 800; margin-bottom: 20px;
-    }
-    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
-    .stat { background: rgba(255,255,255,.06); border: 1px solid var(--border); border-radius: 18px; padding: 16px; text-align: center; }
-    .stat strong { display: block; color: var(--accent); font-size: 1.45rem; }
-    .stat span { color: var(--muted); font-size: .84rem; }
 
-    section { padding: 92px 0; }
-    .section-head { text-align: center; margin-bottom: 48px; }
-    .section-head h2 { font-size: clamp(2rem, 4vw, 3.1rem); margin-bottom: 10px; }
-    .section-head p { color: var(--muted); max-width: 760px; margin: auto; }
-    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .card {
-      background: linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.025));
-      border: 1px solid var(--border); border-radius: 24px; padding: 26px; box-shadow: 0 16px 50px rgba(0,0,0,.18);
-    }
-    .card h3 { font-size: 1.22rem; margin-bottom: 12px; }
-    .card p, .card li { color: var(--muted); }
-    .card ul { padding-left: 18px; }
-    .tag-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
-    .tag { padding: 8px 12px; border-radius: 999px; background: rgba(255,189,57,.11); color: #ffd77a; border: 1px solid rgba(255,189,57,.22); font-size: .86rem; }
-    .tag-blue { background: rgba(56,189,248,.11); color: #9be3ff; border-color: rgba(56,189,248,.22); }
-    .tag-green { background: rgba(34,197,94,.11); color: #98f5b8; border-color: rgba(34,197,94,.22); }
 
-    .timeline { display: grid; gap: 20px; }
-    .timeline-item { border-left: 3px solid var(--accent); padding-left: 20px; }
-    .date { color: var(--accent); font-weight: 700; font-size: .92rem; }
-    .position { color: var(--accent-2); font-weight: 600; margin-bottom: 10px; display: block; }
+<style>
 
-    .project-card { display: flex; flex-direction: column; gap: 14px; }
-    .project-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
-    .project-card h3 { color: var(--text); }
-    .link { color: var(--accent); font-weight: 700; font-size: .92rem; white-space: nowrap; }
-    .disabled-link { color: var(--muted); cursor: default; font-weight: 600; font-size: .9rem; }
+/*======================================
+//--//-->   ABOUT
+======================================*/
 
-    .skills-list { display: grid; gap: 13px; }
-    .skill-row { display: flex; justify-content: space-between; gap: 18px; padding-bottom: 13px; border-bottom: 1px solid var(--border); }
-    .skill-row:last-child { border-bottom: 0; padding-bottom: 0; }
-    .skill-row span:first-child { color: var(--text); font-weight: 600; }
-    .skill-row span:last-child { color: var(--muted); text-align: right; }
+.about-mf .box-shadow-full {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
 
-    .contact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-    .contact-card { text-align: center; }
-    .contact-card strong { display: block; margin-bottom: 8px; color: var(--accent); }
-    footer { border-top: 1px solid var(--border); padding: 28px 0; color: var(--muted); text-align: center; font-size: .92rem; }
+.about-mf .about-img {
+  margin-bottom: 2rem;
+}
 
-    @media (max-width: 900px) {
-      .hero-grid, .grid-2, .grid-3, .contact-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      .stats { grid-template-columns: 1fr; }
-    }
-  </style>
-</head>
-<body>
-  <nav class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#home">Muhammad <span>Saad</span></a>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#data-projects">Data Projects</a></li>
-        <li><a href="#android-projects">Android Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+.about-mf .about-img img {
+  margin-left: 10px;
+}
 
-  <header class="hero" id="home">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">Data Analyst Portfolio</div>
-        <h1>I'm <span>Muhammad Saad</span></h1>
-        <div class="typing" id="typing"></div>
-        <p>Data Analyst with hands-on experience in Python, SQL, Excel, Power BI, EDA, and data cleaning. I also bring real Android development experience, which gives me strong technical problem-solving, API, database, and software workflow understanding.</p>
-        <div class="btn-row">
-          <a class="btn btn-primary" href="#data-projects">View Data Projects</a>
-          <a class="btn btn-outline" href="Muhammad Saad(Data Analyst)(1).pdf" target="_blank">Download Resume</a>
-          <a class="btn btn-outline" href="https://github.com/rjsaad" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn btn-outline" href="https://www.linkedin.com/in/raja-saad-android-developer" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-      </div>
-      <div class="hero-card">
-        <div class="profile-box">
-          <div class="profile-avatar">MS</div>
-          <h2>Data Analyst</h2>
-          <p>Python • SQL • Excel • Power BI • Android Background</p>
-        </div>
-        <div class="stats">
-          <div class="stat"><strong>6+</strong><span>Data Projects</span></div>
-          <div class="stat"><strong>10k+</strong><span>Records Analyzed</span></div>
-          <div class="stat"><strong>2+</strong><span>Years Android Experience</span></div>
-        </div>
-      </div>
-    </div>
-  </header>
 
-  <section id="about">
-    <div class="container grid-2">
-      <div class="card">
-        <div class="section-head" style="text-align:left;margin-bottom:20px">
-          <h2>About Me</h2>
-        </div>
-        <p>I am targeting Data Analyst roles. My core work is cleaning raw data, performing EDA, writing SQL queries, building Excel and Power BI dashboards, and turning business data into simple insights.</p>
-        <p style="margin-top:14px">Before data analytics, I worked as an Android Developer. That experience is still valuable because I understand databases, APIs, app data flow, Firebase, offline storage, and structured problem solving.</p>
-        <div class="tag-list">
-          <span class="tag">Data Analyst</span>
-          <span class="tag">Power BI</span>
-          <span class="tag">SQL</span>
-          <span class="tag">Excel</span>
-          <span class="tag tag-blue">Android Developer</span>
-          <span class="tag tag-blue">Kotlin</span>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Quick Info</h3>
-        <ul>
-          <li><strong>Target Role:</strong> Data Analyst</li>
-          <li><strong>Previous Role:</strong> Junior Android Developer</li>
-          <li><strong>Education:</strong> MCS - Master of Computer Science, AJK</li>
-          <li><strong>Email:</strong> <a href="mailto:rjsaad861@gmail.com">rjsaad861@gmail.com</a></li>
-          <li><strong>Phone:</strong> <a href="tel:+923495553217">0349-5553217</a></li>
-          <li><strong>Location:</strong> Rawalpindi, Pakistan</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+.skill-mf .progress {
+  /* background-color: #cde1f8; */
+  margin: .5rem 0 1.2rem 0;
+  border-radius: 0;
+  height: .7rem;
+}
 
-  <section id="skills">
-    <div class="container">
-      <div class="section-head">
-        <h2>Skills</h2>
-        <p>Data analytics is shown first because that is the job target. Android skills are included as supporting technical experience.</p>
-      </div>
-      <div class="grid-3">
-        <div class="card">
-          <h3>Data Analysis</h3>
-          <div class="skills-list">
-            <div class="skill-row"><span>Python</span><span>Pandas, NumPy, Matplotlib</span></div>
-            <div class="skill-row"><span>SQL</span><span>Joins, Aggregations, Subqueries, Cleaning</span></div>
-            <div class="skill-row"><span>Excel</span><span>Pivot Tables, VLOOKUP, Charts, Cleaning</span></div>
-            <div class="skill-row"><span>Statistics</span><span>Descriptive Statistics, EDA</span></div>
+.skill-mf .progress .progress-bar {
+  height: .7rem;
+  background-color: #ffbd39;
+}
+
+
+/* Animation styles */
+#typing-animation {
+  position: relative;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(20, end) infinite;
+}
+
+#typing-animation:before {
+  content: "";
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #ccc;
+  animation: typing-cursor 0.5s ease-in-out infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes typing-cursor {
+  from {
+    width: 5px;
+  }
+  to {
+    width: 0;
+  }
+}
+
+
+/* project image zoom effect */
+
+.zoom-effect {
+  overflow: hidden;
+  transition: transform 0.3s ease-out;
+}
+
+.zoom-effect:hover {
+  transform: scale(1.1);
+}
+
+
+</style>
+
+
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+	  
+	  
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html">Muhammad Saad</a>
+	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav nav ml-auto">
+	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
+	          <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
+	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+	  <section id="home-section" class="hero">
+		  <div class="home-slider  owl-carousel">
+	       <div class="slider-item ">
+	      	<div class="overlay"></div>
+	         <div class="container">
+	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
+	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg_1.png);">
+	          	 <div class="overlay"></div>
+	          	</div>
+		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+		          	<div class="text">
+		          		<span class="subheading">Hello!</span>
+			            <h1 class="mb-4 mt-3">I'm <span>Muhammad Saad</span></h1>
+
+						<!-- Element to contain animated typing -->
+						<span id="typing-animation"></span>
+
+						<script>
+
+						// Initialize the typing animation
+						const typingAnimationElement = document.getElementById('typing-animation');
+
+						// Create an array of typing text
+						const typingTexts = [
+						'Android Developer  ',
+						'Kotlin Programmer  ',
+						'Jetpack Compose Enthusiast  ',
+						];
+
+						// Create a function to display the typing animation for a given text
+						function playTypingAnimation(text) {
+						// Loop through each character and add it to the element
+						for (let i = 0; i < text.length; i++) {
+							setTimeout(() => {
+							typingAnimationElement.textContent += text[i];
+							}, i * 100); // Increase the delay to slow down the typing animation
+						}
+
+						// Once the animation is complete, reset the text and start over
+						setTimeout(() => {
+							typingAnimationElement.textContent = '';
+							playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+						}, text.length * 150);
+						}
+
+						// Start the typing animation loop
+						playTypingAnimation(typingTexts[0]);
+
+						</script>
+
+						<br>
+						<br>
+			            <h2>Jr.Android Developer</h2>
+						<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
+						<!-- <br> -->
+			            <p><a href="https://www.linkedin.com/in/raja-saad-android-developer" class="btn btn-primary py-3 px-4">LinkedIn</a> 
+							<a href="https://github.com/rjsaad" class="btn btn-white btn-outline-white py-3 px-4">My works</a></p>
+		            </div>
+		          </div>
+	        	</div>
+	        </div>
+	      </div>
+		</div>
+    </section>
+
+
+
+    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
+    	<div class="container">
+			<div class="row">
+				<div class="row d-flex align-items-stretch">
+				<!-- <div class="row d-flex"> -->
+					<div class="col-md-6 col-lg-5 d-flex">
+						<div class="img-about img d-flex align-items-stretch">
+							<div class="overlay">
+								<div class="row">
+									<div class="col-sm-6 col-md-5">
+									  <div class="about-img">
+										<img src="images/about-me.png" class="img-fluid rounded b-shadow-a" alt="">
+									  </div>
+									</div>
+									<!-- Details next to profile image -->
+									<div class="col-sm-6 col-md-7">
+									  <div class="about-info">
+										<p><span class="title-s">Name: </span> <span>Muhammad Saad</span></p>
+										<p><span class="title-s">Job Role: </span> <span>Jr Android Developer</span></p>
+										<p><span class="title-s">Experience: </span> <span>1+ Year</span></p>
+										<p><span class="title-s">Address: </span> <span>Shadman Markit,Lahore</span></p>
+									  </div>
+									</div>
+								  </div>
+
+								<div class="skill-mf">
+									<p class="title-s">Skills</p>
+									<span>Kotlin</span> <span class="pull-right">90%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 88%;" aria-valuenow="95" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+									
+									<span>Jetpack Compose</span> <span class="pull-right">85%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 79%" aria-valuenow="85" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+									
+									<span>MVVM Architecture</span> <span class="pull-right">85%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+									
+									<span>Firebase & REST API</span> <span class="pull-right">85%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="85" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+									
+									<span>Room Database & SQLite</span> <span class="pull-right">80%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+						<div class="row justify-content-start pb-3">
+							<div class="col-md-12 heading-section ftco-animate">
+								
+								<h1 class="big">About</h1>
+								<h2 class="mb-4">About Me</h2>
+								
+								<p>With over 1 year of hands-on experience in Android development, accompanied by a Master’s degree in Computer Science.Proficient in building scalable mobile apps using Kotlin, Java, and Jetpack Compose.  
+									Skilled in MVVM architecture, Room Database, Firebase, and REST API integration. 
+									Demonstrated success in delivering high-quality apps on Google Play and optimizing performance for a seamless user experience.</p>
+								<ul class="about-info mt-4 px-md-0 px-2">
+									<li class="d-flex"><span>Profile:</span> <span>Android Development</span></li>
+									<li class="d-flex"><span>Domain:</span> <span>Mobile Apps</span></li>
+									<li class="d-flex"><span>Education:</span> <span>Master of Computer Science (MCS)</span></li>
+									<li class="d-flex"><span>Language:</span> <span>English, Urdu</span></li>
+									<li class="d-flex"><span>BI Tools:</span> <span>Android Studio , Jetpack Compose, MVVM, Room DB, Firebase, Retrofit</span></li>
+									<li class="d-flex"><span>Other Skills:</span> <span>Coroutines, WorkManager, AdMob, In-App Purchases, Git</span></li>
+									<li class="d-flex"><span>Interest:</span> <span>Coding, App Building, Traveling</span></li>
+									
+								</ul>
+							</div>
+						</div>
+
+
+						<div class="counter-wrap ftco-animate d-flex mt-md-3">
+							<div class="text">
+								<p class="mb-4">
+									<span class="number" data-number="8">0</span> <span>+</span>
+									<span>&nbsp; Projects completed</span>
+								</p>
+								<p><a href="https://www.linkedin.com/in/raja-saad-android-developer" class="btn btn-primary py-3 px-3">LinkedIn</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </section>
+
+
+
+	
+    <section class="ftco-section ftco-no-pb" id="resume-section">
+    	<div class="container">
+    		<div class="row justify-content-center pb-5">
+          <div class="col-md-10 heading-section text-center ftco-animate">
+          	<h1 class="big big-2">Resume</h1>
+            <h2 class="mb-4">Resume</h2>
+<p>Android Developer with 1+ year of experience in designing and building mobile applications. Skilled in Kotlin, Jetpack Compose, MVVM architecture, Firebase, Room Database, and REST API integration. Passionate about creating scalable, high-performance, and user-friendly apps.</p>
           </div>
         </div>
-        <div class="card">
-          <h3>BI & Reporting</h3>
-          <div class="skills-list">
-            <div class="skill-row"><span>Power BI</span><span>Dashboards, Filters, Visuals</span></div>
-            <div class="skill-row"><span>Power Query</span><span>Cleaning, Transforming, Loading</span></div>
-            <div class="skill-row"><span>Business Analysis</span><span>Sales, Churn, Inventory, KPI Tracking</span></div>
-            <div class="skill-row"><span>Reporting</span><span>Insights, Trends, Summary Views</span></div>
+
+		<div class="row">
+			<h1 class="big-4">Experience</h1>
+			<div class="underline"></div>
+		</div>
+		<br>
+		
+		<div class="row">
+				<div class="col-md-6">
+					<div class="resume-wrap ftco-animate">
+						<span class="date">Aug 2024 – Present</span>
+						<h2>Junior Android Developer</h2>
+						<span class="position">Playit Again, Islamabad</span>
+						<p class="mt-4">
+							<ul>
+                    			<li>Developed and maintained 3+ Android projects using MVVM architecture, Jetpack Compose , Room DB, and Firebase.</li>
+                    			<li>Improved user experience by adding localization, smart reminders, and voice-enabled features.</li>
+                    			<li>Optimized app performance with background services, WorkManager, and efficient API handling.</li>
+                </ul>
+						</p>
+					</div>
+
+				</div>
+
+				<div class="col-md-6">
+					<div class="resume-wrap ftco-animate">
+						<span class="date">May 2024 – Aug 2024</span>
+						<h2>Android Intern</h2>
+						<span class="position">10X Digital Agency, Islamabad</span>
+						<p class="mt-4">
+							<ul>
+                    			<li>Worked on multiple app modules by integrating Firebase for authentication and secure storage.</li>
+                    			<li>Implemented REST APIs and Room DB to enable smooth, efficient, and reliable data handling.</li>
+                    			<li>Applied OOP principles and Android components to deliver structured and scalable solutions.</li>
+                			</ul>
+						</p>
+					</div>
+
+				</div>
+			</div>
+
+		<br>
+		<br>
+
+		<div class="row">
+			<h1 class="big-4">Education</h1>
+			<div class="underline"></div>
+		</div>
+		<br>
+		
+			<div class="row">
+    			<div class="col-md-6">
+    				<div class="resume-wrap ftco-animate">
+    					<span class="date">2022-2024</span>
+    					<h2>Master of Computer Science (MCS)</h2>
+    					<span class="position">The University of Azad Jammu and kashmir</span>
+    				</div>
+    			</div>
+
+    			<div class="col-md-6">
+    				<div class="resume-wrap ftco-animate">
+    					<span class="date">2020-2022</span>
+    					<h2>BSC Mathematics and Physics</h2>
+    					<span class="position">Bachelor of Science (BSc) in Mathematics & Physics</span>
+    				</div>
+				</div>
+    		</div>
+
+    		<div class="row justify-content-center mt-5">
+    			<div class="col-md-6 text-center ftco-animate">
+    				<p><a href="https://drive.google.com/file/d/1zAuibsx_sSYrrBi19JfI9-MjqfLr4583/view?usp=drive_link" class="btn btn-primary py-4 px-5">Download CV</a></p>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+   
+
+    <section class="ftco-section" id="project-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Projects</h1>
+            <h2 class="mb-4">Projects</h2>
+            <p>Below are some of the Android projects I have developed using Kotlin, Jetpack Compose, MVVM, Firebase, Room Database, and REST APIs.</p>
+
           </div>
         </div>
-        <div class="card">
-          <h3>Android Development</h3>
-          <div class="skills-list">
-            <div class="skill-row"><span>Kotlin / Java</span><span>Android App Development</span></div>
-            <div class="skill-row"><span>Architecture</span><span>MVVM, Clean Code, OOP</span></div>
-            <div class="skill-row"><span>Database</span><span>Room DB, SQLite, Offline Storage</span></div>
-            <div class="skill-row"><span>Backend/Data</span><span>Firebase, REST APIs, Retrofit</span></div>
-            <div class="skill-row"><span>Modern Android</span><span>Jetpack Compose, WorkManager</span></div>
+
+        <div class="row d-flex">
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="https://play.google.com/store/apps/details?id=com.homeworkoutmate.dailyfitnessapp.gymexercise" class="block-20 zoom-effect" style="background-image: url('images/proj_1.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+				<h3 class="heading"><a href="https://play.google.com/store/apps/details?id=com.homeworkoutmate.dailyfitnessapp.gymexercise">3Dev Gym Workout Planner</a></h3>      			
+				<p>Developed a fitness app with BMI calculator, customizable workouts, calorie tracking, and progress monitoring using MVVM architecture for scalability and performance.</p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="https://play.google.com/store/apps/details?id=filerecovery.videosrecovery.photosrecovery.allrecovery.datarecovery.restoredata.recoverdata" class="block-20 zoom-effect" style="background-image: url('images/proj_2.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+
+                <h3 class="heading"><a href="https://play.google.com/store/apps/details?id=filerecovery.videosrecovery.photosrecovery.allrecovery.datarecovery.restoredata.recoverdata">Data Recovery Photos & Videos</a></h3>
+                <p>Developed an Android app to recover deleted photos, videos, WhatsApp media, and contacts with deep scan engine, secure backup/restore, and one-click restoration.</p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="https://play.google.com/store/apps/details?id=com.appwrap.compose" class="block-20 zoom-effect" style="background-image: url('images/proj_3.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+
+                <h3 class="heading"><a href="https://play.google.com/store/apps/details?id=com.appwrap.compose">Web to App - No Code App Builder</a></h3>
+                <p>Built a no-code Android app builder to convert websites into mobile apps with customizable name, icon, splash screen, and modern Jetpack Compose UI.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+	<br>
+		<!-- added justify-content-center to center align the last two projects -->
+		<div class="row d-flex justify-content-center">  
+			<div class="col-md-4 d-flex ftco-animate">
+				<div class="blog-entry justify-content-end">
+				<a href="https://play.google.com/store/apps/details?id=com.codeplus.carplaycode" class="block-20 zoom-effect" style="background-image: url('images/proj_4.jpg');">
+				</a>
+				<div class="text mt-3 float-right d-block">
+  
+				  <h3 class="heading"><a href="https://play.google.com/store/apps/details?id=com.codeplus.carplaycode">Mirror Link Car | Cast to Car</a></h3>
+				  <p>Created an Android app for car users with maps, weather, documents, and expense tracking, designed for responsive and safe interaction while driving.</p>
+				</div>
+			  </div>
+			</div>
+
+
+			<div class="col-md-4 d-flex ftco-animate">
+				<div class="blog-entry justify-content-end">
+				<a href="https://github.com/rjsaad/rentify-House-Renting-app-" class="block-20 zoom-effect" style="background-image: url('images/proj_5.jpg');">
+				</a>
+				<div class="text mt-3 float-right d-block">
+  
+				  <h3 class="heading"><a href="https://github.com/rjsaad/rentify-House-Renting-app-">Rentify House Renting App</a></h3>
+				  <p>Developed a house renting app where users can add or delete houses, mark favorites, manage unfavorites, and switch themes with a clean modern UI.</p>
+				</div>
+			  </div>
+			</div>
+		 </div>
+	  </div>
+    </section>
+
+	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
+  <div class="container">
+    <div class="row d-md-flex align-items-center">
+
+      <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+        <div class="block-18">
+          <div class="text">
+            <strong class="number" data-number="6">0</strong>
+            <span>Apps Published</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section id="data-projects">
-    <div class="container">
-      <div class="section-head">
-        <h2>Data Analytics Projects</h2>
-        <p>These projects should be shown first to recruiters because your target job is Data Analyst.</p>
-      </div>
-      <div class="grid-3">
-        <article class="card project-card">
-          <div class="project-top"><h3>Excel Inventory Management System</h3><a class="link" href="https://github.com/rjsaad/Excel-Inventory-Management-System" target="_blank" rel="noopener">GitHub</a></div>
-          <p>Built an Excel-based inventory system for sales, purchases, product stock, customer balances, monthly tracking, and business reporting.</p>
-          <div class="tag-list"><span class="tag">Excel</span><span class="tag">Inventory</span><span class="tag">Dashboard</span></div>
-        </article>
-        <article class="card project-card">
-          <div class="project-top"><h3>Google Play Store Analysis</h3><a class="link" href="https://github.com/rjsaad/google-play-store-analytics" target="_blank" rel="noopener">GitHub</a></div>
-          <p>Performed EDA on 10k+ app records, cleaned missing values, standardized categories and ratings, and analyzed installs, app types, and pricing trends.</p>
-          <div class="tag-list"><span class="tag">Python</span><span class="tag">EDA</span><span class="tag">10k+ Rows</span></div>
-        </article>
-        <article class="card project-card">
-          <div class="project-top"><h3>Weather Power BI Dashboard</h3><a class="link" href="https://github.com/rjsaad/weather-powerbi-dashboard" target="_blank" rel="noopener">GitHub</a></div>
-          <p>Connected weather API data into Power BI, cleaned it with Power Query, built a data model, and created an interactive weather dashboard.</p>
-          <div class="tag-list"><span class="tag">Power BI</span><span class="tag">API</span><span class="tag">Power Query</span></div>
-        </article>
-        <article class="card project-card">
-          <div class="project-top"><h3>Mobile Sales Data Analysis</h3><a class="link" href="https://github.com/rjsaad/Mobile_Sales_Data_Analysis" target="_blank" rel="noopener">GitHub</a></div>
-          <p>Analyzed mobile sales data by brand, model, and location to find sales trends, revenue patterns, and high-performing products.</p>
-          <div class="tag-list"><span class="tag">Sales</span><span class="tag">Power BI</span><span class="tag">Insights</span></div>
-        </article>
-        <article class="card project-card">
-          <div class="project-top"><h3>Sales Data Cleaning</h3><a class="link" href="https://github.com/rjsaad/sales-data-analysis" target="_blank" rel="noopener">GitHub</a></div>
-          <p>Cleaned raw sales data by fixing inconsistent date, category, and price formats, handling missing values, removing duplicates, and validating totals.</p>
-          <div class="tag-list"><span class="tag">Data Cleaning</span><span class="tag">Excel</span><span class="tag">Validation</span></div>
-        </article>
-        <article class="card project-card">
-          <div class="project-top"><h3>Customer Churn Analysis</h3><span class="disabled-link">Project</span></div>
-          <p>Analyzed telecom churn data to understand customer behavior and explored churn relationships with contract type, service usage, and customer features.</p>
-          <div class="tag-list"><span class="tag">Churn</span><span class="tag">EDA</span><span class="tag">Business</span></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="android-projects">
-    <div class="container">
-      <div class="section-head">
-        <h2>Android Development Projects</h2>
-        <p>These projects support your technical background. Only the workout app has an active link because you said only that app click is working.</p>
-      </div>
-      <div class="grid-3">
-        <article class="card project-card">
-          <div class="project-top"><h3>3Dev Gym Workout Planner</h3><a class="link" href="https://play.google.com/store/apps/details?id=com.homeworkoutmate.dailyfitnessapp.gymexercise" target="_blank" rel="noopener">Live App</a></div>
-          <p>Developed a fitness app with BMI calculator, customizable workouts, calorie tracking, progress monitoring, and structured MVVM-based implementation.</p>
-          <div class="tag-list"><span class="tag tag-blue">Kotlin</span><span class="tag tag-blue">MVVM</span><span class="tag tag-blue">Android</span></div>
-        </article>
-        <article class="card project-card">
-          <div class="project-top"><h3>Data Recovery Photos & Videos</h3><span class="disabled-link">Link Removed</span></div>
-          <p>Worked on Android features for media recovery, scan flow, backup/restore experience, and user-facing restoration workflow.</p>
-          <div class="tag-list"><span class="tag tag-blue">Android</span><span class="tag tag-blue">Storage</span><span class="tag tag-blue">UX</span></div>
-        </article>
-        <article class="card project-card">
-          <div class="project-top"><h3>Web to App - No Code App Builder</h3><span class="disabled-link">Link Removed</span></div>
-          <p>Built app-builder features for converting websites into Android apps with customizable app name, icon, splash screen, and modern UI.</p>
-          <div class="tag-list"><span class="tag tag-blue">Jetpack Compose</span><span class="tag tag-blue">UI</span><span class="tag tag-blue">Android</span></div>
-        </article>
-        <article class="card project-card">
-          <div class="project-top"><h3>Mirror Link Car | Cast to Car</h3><span class="disabled-link">Link Removed</span></div>
-          <p>Worked on car-focused Android app features including maps, weather, documents, expense tracking, and responsive user flows.</p>
-          <div class="tag-list"><span class="tag tag-blue">Android</span><span class="tag tag-blue">Maps</span><span class="tag tag-blue">Services</span></div>
-        </article>
-        <article class="card project-card">
-          <div class="project-top"><h3>Rentify House Renting App</h3><span class="disabled-link">Link Removed</span></div>
-          <p>Developed a house renting app with add/delete house listings, favorites, unfavorites, theme switching, and clean UI structure.</p>
-          <div class="tag-list"><span class="tag tag-blue">Room DB</span><span class="tag tag-blue">MVVM</span><span class="tag tag-blue">FYP</span></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience">
-    <div class="container">
-      <div class="section-head">
-        <h2>Experience</h2>
-        <p>Shown as Android experience, but written so recruiters can also see technical data-handling value.</p>
-      </div>
-      <div class="grid-2">
-        <div class="card timeline">
-          <div class="timeline-item">
-            <span class="date">Nov 2025 – Apr 2026</span>
-            <h3>Junior Android Developer</h3>
-            <span class="position">Algo Genius Technologies | Lahore</span>
-            <ul>
-              <li>Developed Android applications using Kotlin, MVVM, Room DB, and REST APIs.</li>
-              <li>Worked on offline storage, API integration, and background processing.</li>
-              <li>Handled app data flow between APIs, local databases, and user interfaces.</li>
-            </ul>
-          </div>
-          <div class="timeline-item">
-            <span class="date">Aug 2024 – Sep 2025</span>
-            <h3>Junior Android Developer</h3>
-            <span class="position">Playit Again | Rawalpindi</span>
-            <ul>
-              <li>Built and maintained CarPlay, Workout, and Pet Care apps using MVVM, Room DB, and Firebase.</li>
-              <li>Enhanced user experience with localization, smart reminders, and voice-controlled features.</li>
-              <li>Optimized performance with background services, WorkManager, and efficient API integration.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="card timeline">
-          <div class="timeline-item">
-            <span class="date">May 2024 – Jul 2024</span>
-            <h3>Android Intern</h3>
-            <span class="position">10X Digital Agency | Islamabad</span>
-            <ul>
-              <li>Integrated Firebase for authentication and data storage.</li>
-              <li>Worked with REST APIs and Room DB for efficient storage.</li>
-              <li>Applied OOP concepts and core Android components across multiple modules.</li>
-            </ul>
-          </div>
-          <div class="timeline-item">
-            <span class="date">Education</span>
-            <h3>Master of Computer Science</h3>
-            <span class="position">AJK University</span>
-            <p>CGPA: 3.21 | FYP: Rentify – House Renting App</p>
+      <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+        <div class="block-18">
+          <div class="text">
+            <strong class="number" data-number="12">0</strong>
+            <span>Total Projects</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section id="contact">
-    <div class="container">
-      <div class="section-head">
-        <h2>Contact</h2>
-        <p>Reach out for Data Analyst roles, dashboards, data cleaning, reporting, or analytics work.</p>
+      <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+        <div class="block-18">
+          <div class="text">
+            <strong class="number" data-number="1.2">0</strong>
+            <span>Years of Experience</span>
+          </div>
+        </div>
       </div>
-      <div class="contact-grid">
-        <div class="card contact-card"><strong>Email</strong><a href="mailto:rjsaad861@gmail.com">rjsaad861@gmail.com</a></div>
-        <div class="card contact-card"><strong>Phone</strong><a href="tel:+923495553217">0349-5553217</a></div>
-        <div class="card contact-card"><strong>GitHub</strong><a href="https://github.com/rjsaad" target="_blank" rel="noopener">github.com/rjsaad</a></div>
-        <div class="card contact-card"><strong>LinkedIn</strong><a href="https://www.linkedin.com/in/raja-saad-android-developer" target="_blank" rel="noopener">View Profile</a></div>
+
+      <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+        <div class="block-18">
+          <div class="text">
+            <strong class="number" data-number="10000">0</strong>
+            <span>App Downloads</span>
+          </div>
+        </div>
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <div class="container">© <span id="year"></span> Muhammad Saad. All rights reserved.</div>
-  </footer>
+	
+	  
 
-  <script>
-    const roles = [
-      "Data Analyst",
-      "Power BI Dashboard Builder",
-      "SQL & Excel Analyst",
-      "Python EDA Practitioner",
-      "Android Developer Background"
-    ];
-    const typing = document.getElementById("typing");
-    let roleIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
 
-    function typeLoop() {
-      const word = roles[roleIndex];
-      typing.textContent = deleting ? word.slice(0, charIndex--) : word.slice(0, charIndex++) ;
-      if (!deleting && charIndex > word.length + 8) deleting = true;
-      if (deleting && charIndex < 0) {
-        deleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-      }
-      setTimeout(typeLoop, deleting ? 55 : 85);
-    }
-    typeLoop();
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
+
+    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+      <div class="container">
+      	<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Contact</h1>
+            <h2 class="mb-4">Contact Me</h2>
+            <p>Below are the details to reach out to me!</p>
+          </div>
+        </div>
+
+        <div class="row d-flex contact-info mb-5">
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-map-signs"></span>
+          		</div>
+          		<h3 class="mb-4">Address</h3>
+	            <p>Dhok kala khan , Islamabad</p>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-phone2"></span>
+          		</div>
+          		<h3 class="mb-4">Contact Number</h3>
+	            <p><a href="tel:+923495553217">+92 349 555 3217</a></p>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-paper-plane"></span>
+          		</div>
+          		<h3 class="mb-4">Email Address</h3>
+	            <p><a href="mailto:info@yoursite.com">msaaddevoffical@gmail.com</a></p>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-globe"></span>
+          		</div>
+          		<h3 class="mb-4">Download Resume</h3>
+	            <p><a href="https://drive.google.com/file/d/1zAuibsx_sSYrrBi19JfI9-MjqfLr4583/view?usp=drive_link">resumelink</a></p>
+	          </div>
+          </div>
+
+		  <div class="container">
+			<br>
+			<br>
+				<br>
+					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
+					  <li class="ftco-animate normal-txt">Find me on  </li>
+					  <li class="ftco-animate"><a href="https://www.linkedin.com/in/raja-saad-android-developer"><span class="icon-linkedin"></span></a></li>  
+					  <li class="ftco-animate"><a href="https://www.facebook.com/share/16TKEvetgA/?mibextid=wwXIfr"><span class="icon-facebook"></span></a></li>
+				      <li class="ftco-animate"><a href="https://www.instagram.com/rm.saad.pervez?igsh=YjFpZ21zYjdweDZu&utm_source=qr"><span class="icon-instagram"></span></a></li>
+					</ul>
+				<br>
+		   </div>
+   </div>
+ </section>
+
+
+ 
+	
+    <footer class="ftco-footer ftco-section">
+		<div class="container">
+		  <div class="row">
+			<div class="col-md-12 text-center">
+  
+			  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+	Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+			</div>
+		  </div>
+		</div>
+	  </footer>
+
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  
+  <script src="js/main.js"></script>
+    
+  </body>
+
 </html>
+
